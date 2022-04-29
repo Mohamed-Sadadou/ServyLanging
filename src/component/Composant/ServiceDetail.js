@@ -140,23 +140,23 @@ const useStyles = makeStyles((theme) => ({
 export default function LandingPage(props) {
 	const classes = useStyles();
 	var img;
-	if (props.id === 1) img = { corp: classes.Corp1 };
+	if (props.id === "1") img = { corp: classes.Corp1 };
 
-	if (props.id === 2) img = { corp: classes.Corp2 };
+	if (props.id === "2") img = { corp: classes.Corp2 };
 
-	if (props.id === 3) img = { corp: classes.Corp3 };
+	if (props.id === "3") img = { corp: classes.Corp3 };
 
-	if (props.id === 3) img = { corp: classes.Corp3 };
+	if (props.id === "3") img = { corp: classes.Corp3 };
 
-	if (props.id === 4) img = { corp: classes.Corp4 };
+	if (props.id === "4") img = { corp: classes.Corp4 };
 
-	if (props.id === 5) img = { corp: classes.Corp5 };
+	if (props.id === "5") img = { corp: classes.Corp5 };
 
-	if (props.id === 6) img = { corp: classes.Corp6 };
+	if (props.id === "6") img = { corp: classes.Corp6 };
 
-	if (props.id === 7) img = { corp: classes.Corp7 };
+	if (props.id === "7") img = { corp: classes.Corp7 };
 
-	if (props.id === 8) img = { corp: classes.Corp8 };
+	if (props.id === "8") img = { corp: classes.Corp8 };
 
 	function useWindowSize() {
 		const [size, setSize] = useState([0, 0]);
