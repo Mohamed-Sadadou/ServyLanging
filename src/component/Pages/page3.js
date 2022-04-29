@@ -2,30 +2,8 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Service from "../Composant/Service";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import { styled } from "@mui/material/styles";
-import Langages from "../../Images/Group 47.png";
 
-const Buttone2 = styled(Button)({
-	boxShadow: "none",
-	textTransform: "none",
-	width: "360px",
-	height: "50px",
-	fontSize: "20px",
-	padding: "6px 12px",
-	lineHeight: 1.5,
-	marginTop: "50px",
-	borderRadius: "5px",
-	boxShadow: "0px 0px 15px #CC2936, 0 -10px 10px -5px #435EF7",
-	backgroundColor: "#1F1614",
-	color: "white",
-	fontFamily: "",
-	"&:hover": {
-		backgroundColor: "#1F1614",
-		boxShadow: "0px 0px 15px #CC2936, 0 -10px 10px -5px #435EF7",
-	},
-});
+
 const useStyles = makeStyles((theme) => ({
 	Corp3: {
 		width: "98.9vw",

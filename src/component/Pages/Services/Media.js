@@ -1,17 +1,8 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import Service from "../../Composant/ServiceDetail";
 
-const useStyles = makeStyles((theme) => ({
-	Corp7: {
-		width: "98.9vw",
-		height: "650px",
-	},
-}));
 
 export default function LandingPage() {
-	const classes = useStyles();
-
 	//************************************************* */
 	return (
 		<div>

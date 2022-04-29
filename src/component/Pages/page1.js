@@ -1,24 +1,20 @@
 import React from "react";
-import { useContext, useState, useEffect, useLayoutEffect } from "react";
+import {useState, useLayoutEffect } from "react";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@mui/material/Button";
-import FormControl, { useFormControl } from "@mui/material/FormControl";
 import OutlinedInput from "@mui/material/OutlinedInput";
-import FormHelperText from "@mui/material/FormHelperText";
-import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 import Back1 from "../../Images/arriere1.jpg";
 import Back2 from "../../Images/arriere2.jpg";
 import Back3 from "../../Images/arriere3.jpg";
-import comp from "../../Images/logos.png";
 import NavBar from "../Composant/NavBar";
 import { Fade } from "react-slideshow-image";
 
 import "react-slideshow-image/dist/styles.css";
 function getWindowDimensions() {
-	const { innerWidth: width, innerHeight: height } = window;
+	const { innerWidth: width, } = window;
 	return width;
 }
 const Buttone = styled(Button)({
@@ -33,7 +29,6 @@ const Buttone = styled(Button)({
 	borderRadius: "0px 5px 5px 0px",
 	backgroundColor: "#9AC3FE",
 	color: "white",
-	fontFamily: "",
 	"&:hover": {
 		backgroundColor: "#68A6FD",
 	},
@@ -50,7 +45,6 @@ const Buttone2 = styled(Button)({
 	borderRadius: "0px 5px 5px 0px",
 	backgroundColor: "#9AC3FE",
 	color: "white",
-	fontFamily: "",
 	"&:hover": {
 		backgroundColor: "#68A6FD",
 	},

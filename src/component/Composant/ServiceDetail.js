@@ -1,9 +1,7 @@
 import React from "react";
-import { useContext, useState, useEffect, useLayoutEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import { styled } from "@mui/material/styles";
 import back1 from "../../Images/fond1.png";
 import back2 from "../../Images/fond2.png";
 import back3 from "../../Images/fond3.png";
@@ -12,7 +10,6 @@ import back5 from "../../Images/fond5.png";
 import back6 from "../../Images/fond6.png";
 import back7 from "../../Images/fond7.png";
 import back8 from "../../Images/fond8.png";
-import comp from "../../Images/logos.png";
 import NavBar from "./NavBar";
 import Footer from "../Pages/Footer";
 import ActionPart from "./ActionPart";
@@ -143,23 +140,23 @@ const useStyles = makeStyles((theme) => ({
 export default function LandingPage(props) {
 	const classes = useStyles();
 	var img;
-	if (props.id == 1) img = { corp: classes.Corp1 };
+	if (props.id === 1) img = { corp: classes.Corp1 };
 
-	if (props.id == 2) img = { corp: classes.Corp2 };
+	if (props.id === 2) img = { corp: classes.Corp2 };
 
-	if (props.id == 3) img = { corp: classes.Corp3 };
+	if (props.id === 3) img = { corp: classes.Corp3 };
 
-	if (props.id == 3) img = { corp: classes.Corp3 };
+	if (props.id === 3) img = { corp: classes.Corp3 };
 
-	if (props.id == 4) img = { corp: classes.Corp4 };
+	if (props.id === 4) img = { corp: classes.Corp4 };
 
-	if (props.id == 5) img = { corp: classes.Corp5 };
+	if (props.id === 5) img = { corp: classes.Corp5 };
 
-	if (props.id == 6) img = { corp: classes.Corp6 };
+	if (props.id === 6) img = { corp: classes.Corp6 };
 
-	if (props.id == 7) img = { corp: classes.Corp7 };
+	if (props.id === 7) img = { corp: classes.Corp7 };
 
-	if (props.id == 8) img = { corp: classes.Corp8 };
+	if (props.id === 8) img = { corp: classes.Corp8 };
 
 	function useWindowSize() {
 		const [size, setSize] = useState([0, 0]);

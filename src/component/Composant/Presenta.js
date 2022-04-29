@@ -1,13 +1,13 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { useContext, useState, useEffect, useLayoutEffect } from "react";
+import {useState,  useLayoutEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@mui/material/Typography";
 import img1 from "../../Images/1.png";
 import img2 from "../../Images/2.png";
 import img3 from "../../Images/3.png";
 function getWindowDimensions() {
-	const { innerWidth: width, innerHeight: height } = window;
+	const { innerWidth: width,  } = window;
 	return width;
 }
 const useStyles = makeStyles((theme) => ({
@@ -101,15 +101,15 @@ export default function BasicCard(props) {
 		return size;
 	}
 	useWindowSize();
-	if (props.num == "1" || props.num == "3") {
+	if (props.num === "1" || props.num === "3") {
 		return (
 			<div className={classes.corp}>
 				<div className={classes.Content}>
 					<div className={classes.BlocImage}>
-						{props.num == "1" && (
+						{props.num === "1" && (
 							<img src={img1} className={classes.image} alt="fireSpot" />
 						)}
-						{props.num == "3" && (
+						{props.num === "3" && (
 							<img src={img3} className={classes.image} alt="fireSpot" />
 						)}
 					</div>
@@ -186,7 +186,7 @@ export default function BasicCard(props) {
 						</div>
 					</div>
 					<div className={classes.BlocImage}>
-						{props.num == "2" && (
+						{props.num === "2" && (
 							<img src={img2} className={classes.image} alt="fireSpot" />
 						)}
 					</div>

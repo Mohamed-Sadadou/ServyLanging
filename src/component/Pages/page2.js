@@ -1,16 +1,11 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
-import { useContext, useState, useEffect, useLayoutEffect } from "react";
+import {useState, useLayoutEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Presenta from "../Composant/Presenta";
-import Card from "../Composant/Paper";
 import Box from "@mui/material/Box";
 import Logo from "../../Images/Logo C.png";
 
-function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window;
-  return width;
-}
 const useStyles = makeStyles((theme) => ({
   vide2: {
     height: "50px",
@@ -28,11 +23,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "10px",
     alignItems: "center",
     height: "1500px",
-    
     width: "90vw",
     display: "Grid",
     justifyContent: "center",
-    alignItems: "center",
     [theme.breakpoints.down("1000")]: { height: "1200px" },
     [theme.breakpoints.down("660")]: { height: "1040px" },
   },

@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import OutlinedInput from "@mui/material/OutlinedInput";
 
 function getWindowDimensions() {
-	const { innerWidth: width, innerHeight: height } = window;
+	const { innerWidth: width,  } = window;
 	return width;
 }
 const Buttone = styled(Button)({
@@ -21,7 +21,6 @@ const Buttone = styled(Button)({
 	borderRadius: "0px 5px 5px 0px",
 	backgroundColor: "#9AC3FE",
 	color: "black",
-	fontFamily: "",
 	"&:hover": {
 		backgroundColor: "#68A6FD",
 	},
@@ -39,7 +38,6 @@ const Buttone2 = styled(Button)({
 	borderRadius: "0px 5px 5px 0px",
 	backgroundColor: "#9AC3FE",
 	color: "black",
-	fontFamily: "",
 	"&:hover": {
         backgroundColor: "#68A6FD",
 	},

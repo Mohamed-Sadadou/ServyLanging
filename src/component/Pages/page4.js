@@ -1,9 +1,7 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
 import Fond from "../../Images/Image4.png";
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@mui/material/Box";
-import logos from "../../Images/Group 45.png";
 import Rond1 from "../../Images/rond1.png";
 import Rond2 from "../../Images/rond2.png";
 import Rond3 from "../../Images/rond3.png";

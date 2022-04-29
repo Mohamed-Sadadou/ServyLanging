@@ -1,17 +1,13 @@
 import React from "react";
-import { useContext, useState, useEffect, useLayoutEffect } from "react";
+import {useState, useLayoutEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
-import back1 from "../../Images/fond1.png";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import Logo from "../../Images/Logobleu.png";
-import comp from "../../Images/logos.png";
 import NavBar from "../Composant/NavBar";
 import Footer from "../Pages/Footer";
-import ActionPart from "../Composant/ActionPart";
-
 import f1 from "../../Images/f1.png";
 import f2 from "../../Images/f2.png";
 import f3 from "../../Images/f3.png";
@@ -20,7 +16,7 @@ import f5 from "../../Images/f5.png";
 import f6 from "../../Images/f6.png";
 
 function getWindowDimensions() {
-	const { innerWidth: width, innerHeight: height } = window;
+	const { innerWidth: width, } = window;
 	return width;
 }
 const Buttone = styled(Button)({
@@ -35,7 +31,6 @@ const Buttone = styled(Button)({
 	borderRadius: "0px 5px 5px 0px",
 	backgroundColor: "#68A6FD",
 	color: "white",
-	fontFamily: "",
 	"&:hover": {
 		backgroundColor: "#68A6FD",
 	},
@@ -52,7 +47,6 @@ const Buttone2 = styled(Button)({
 	borderRadius: "0px 5px 5px 0px",
 	backgroundColor: "#68A6FD",
 	color: "white",
-	fontFamily: "",
 	"&:hover": {
 		backgroundColor: "#68A6FD",
 	},

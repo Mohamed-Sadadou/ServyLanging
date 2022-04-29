@@ -132,7 +132,7 @@ export default function BasicCard(props) {
 
 	return (
 		<div>
-			{props.serv == "1" && (
+			{props.serv === "1" && (
 				<div className={classes.b1}>
 					<div style={{ height: "30px" }}></div>
 					<div
@@ -153,7 +153,7 @@ export default function BasicCard(props) {
 					</div>
 				</div>
 			)}
-			{props.serv == "2" && (
+			{props.serv === "2" && (
 				<div className={classes.b2}>
 					<div style={{ height: "30px" }}></div>
 					<div
@@ -174,7 +174,7 @@ export default function BasicCard(props) {
 					</div>
 				</div>
 			)}
-			{props.serv == "3" && (
+			{props.serv === "3" && (
 				<div className={classes.b3}>
 					<div style={{ height: "30px" }}></div>
 					<div
@@ -195,7 +195,7 @@ export default function BasicCard(props) {
 					</div>
 				</div>
 			)}
-			{props.serv == "4" && (
+			{props.serv === "4" && (
 				<div className={classes.b4}>
 					<div style={{ height: "30px" }}></div>
 					<div
@@ -216,7 +216,7 @@ export default function BasicCard(props) {
 					</div>
 				</div>
 			)}
-			{props.serv == "5" && (
+			{props.serv === "5" && (
 				<div className={classes.b5}>
 					<div style={{ height: "30px" }}></div>
 					<div
@@ -237,7 +237,7 @@ export default function BasicCard(props) {
 					</div>
 				</div>
 			)}
-			{props.serv == "6" && (
+			{props.serv === "6" && (
 				<div className={classes.b6}>
 					<div style={{ height: "30px" }}></div>
 					<div
@@ -258,7 +258,7 @@ export default function BasicCard(props) {
 					</div>
 				</div>
 			)}
-			{props.serv == "7" && (
+			{props.serv === "7" && (
 				<div className={classes.b7}>
 					<div style={{ height: "30px" }}></div>
 					<div
@@ -279,7 +279,7 @@ export default function BasicCard(props) {
 					</div>
 				</div>
 			)}
-			{props.serv == "8" && (
+			{props.serv === "8" && (
 				<div className={classes.b8}>
 					<div style={{ height: "30px" }}></div>
 					<div

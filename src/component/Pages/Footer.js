@@ -1,8 +1,6 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@mui/material/Box";
-
 import fb from "../../Images/fb.png";
 import linkedin from "../../Images/linkedin.png";
 import insta from "../../Images/insta.png";

@@ -1,14 +1,13 @@
 import React from "react";
-import { useContext, useState, useEffect, useLayoutEffect } from "react";
+import {useState,useLayoutEffect } from "react";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import OutlinedInput from "@mui/material/OutlinedInput";
 function getWindowDimensions() {
-	const { innerWidth: width, innerHeight: height } = window;
+	const { innerWidth: width} = window;
 	return width;
 }
 const Buttone = styled(Button)({
@@ -23,7 +22,6 @@ const Buttone = styled(Button)({
 	borderRadius: "0px 5px 5px 0px",
 	backgroundColor: "#68A6FD",
 	color: "white",
-	fontFamily: "",
 	"&:hover": {
 		backgroundColor: "#68A6FD",
 		boxShadow: "5px 0px 5px #C4C4C4",
@@ -42,7 +40,6 @@ const Buttone2 = styled(Button)({
 	borderRadius: "0px 5px 5px 0px",
 	backgroundColor: "#68A6FD",
 	color: "white",
-	fontFamily: "",
 	"&:hover": {
 		backgroundColor: "#68A6FD",
 		boxShadow: "5px 0px 5px #C4C4C4",

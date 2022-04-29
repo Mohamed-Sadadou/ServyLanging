@@ -2,8 +2,7 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@mui/material/Box";
-
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 import Logo from "../../Images/Frame 458logo.svg";
 const useStyles = makeStyles((theme) => ({
 	Corp7: {

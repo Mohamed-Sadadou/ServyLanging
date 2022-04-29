@@ -1,36 +1,20 @@
 import * as React from "react";
-import {
-	useContext,
-	useState,
-	useEffect,
-	useLayoutEffect,
-	useRef,
-} from "react";
+import { useState, useLayoutEffect } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import { makeStyles } from "@material-ui/core/styles";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import MenuIcon from "@mui/icons-material/Menu";
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import Switch from "@mui/material/Switch";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormGroup from "@mui/material/FormGroup";
-import MenuItem from "@mui/material/MenuItem";
-import Menu from "@mui/material/Menu";
 import Logo1 from "../../Images/Logo C (1).png";
 import Logo from "../../Images/Logo.png";
 import Logo1n from "../../Images/Logo C.png";
 import Logon from "../../Images/Logo (1).png";
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
-import profil from "../../Images/profil.jpg";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link, } from "react-scroll";
 
 function getWindowDimensions() {
-	const { innerWidth: width, innerHeight: height } = window;
+	const { innerWidth: width, } = window;
 	return width;
 }
 
@@ -92,7 +76,6 @@ const useStyles = makeStyles((theme) => ({
 	ActionBloc: {
 		width: "35vw",
 		minWidth: "250px",
-		marginLeft: "45px",
 		fontSize: "14px",
 		marginLeft: "25px",
 		[theme.breakpoints.down("1100")]: {
@@ -176,9 +159,9 @@ const ButtonSpe = styled(Button)({
 export default function MenuAppBar(props) {
 	const classes = useStyles();
 
-	var txt, color;
-	if (props.id == 1) txt = { txt: classes.Corp1 };
-	if (props.id == "1") color = { color: "black" };
+	var color;
+	
+	if (props.id === "1") color = { color: "black" };
 	else color = { color: "white" };
 	function useWindowSize() {
 		const [size, setSize] = useState([0, 0]);
@@ -198,7 +181,7 @@ export default function MenuAppBar(props) {
 				position="static"
 				style={{ background: "transparent", boxShadow: "none" }}>
 				<Toolbar className={classes.Toolbar}>
-					{getWindowDimensions() <= 800 && props.id == "0" && (
+					{getWindowDimensions() <= 800 && props.id === "0" && (
 						<div
 							className={classes.LogoBloc}
 							onClick={(e) => {
@@ -207,7 +190,7 @@ export default function MenuAppBar(props) {
 							<img src={Logo1} className={classes.Logo} alt="fireSpot" />
 						</div>
 					)}
-					{getWindowDimensions() > 800 && props.id == "0" && (
+					{getWindowDimensions() > 800 && props.id === "0" && (
 						<div
 							className={classes.LogoBloc}
 							onClick={(e) => {
@@ -216,7 +199,7 @@ export default function MenuAppBar(props) {
 							<img src={Logo} className={classes.Logo} alt="fireSpot" />
 						</div>
 					)}
-					{getWindowDimensions() <= 800 && props.id == "1" && (
+					{getWindowDimensions() <= 800 && props.id === "1" && (
 						<div
 							className={classes.LogoBloc}
 							onClick={(e) => {
@@ -225,7 +208,7 @@ export default function MenuAppBar(props) {
 							<img src={Logo1n} className={classes.Logo} alt="fireSpot" />
 						</div>
 					)}
-					{getWindowDimensions() > 800 && props.id == "1" && (
+					{getWindowDimensions() > 800 && props.id === "1" && (
 						<div
 							className={classes.LogoBloc}
 							onClick={(e) => {
@@ -279,7 +262,7 @@ export default function MenuAppBar(props) {
 										component="div"
 										align={"center"}
 										onClick={(e) => {
-											if (props.id == "1") {
+											if (props.id === "1") {
 												window.location.href = "/LandingPage ";
 											}
 										}}>
@@ -328,7 +311,7 @@ export default function MenuAppBar(props) {
 									}}
 									component="div"
 									onClick={(e) => {
-										if (props.id == "1") {
+										if (props.id === "1") {
 											window.location.href = "/LandingPage ";
 										}
 									}}
