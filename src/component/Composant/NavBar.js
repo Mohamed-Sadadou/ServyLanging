@@ -11,35 +11,25 @@ import Logo1n from "../../Images/Logo C.png";
 import Logon from "../../Images/Logo (1).png";
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
-import { Link, } from "react-scroll";
+import { Link } from "react-scroll";
 
 function getWindowDimensions() {
-	const { innerWidth: width, } = window;
+	const { innerWidth: width } = window;
 	return width;
 }
 
 const useStyles = makeStyles((theme) => ({
 	Toolbar: {
-		width: "98.9vw",
+		width: "100%",
 		display: "flex",
 		flexdirection: "row",
 		[theme.breakpoints.down("900")]: { height: "20px" },
 	},
 	LogoBloc: {
 		marginLeft: "00px",
-		width: "38vw",
-		[theme.breakpoints.down("1100")]: {
-			width: "25vw",
-			height: 45,
-			marginRight: 10,
-		},
-		[theme.breakpoints.down("900")]: {
-			width: "15vw",
-			marginRight: 40,
-			marginLeft: "5px",
-		},
-		[theme.breakpoints.down("800")]: { width: "10vw", marginRight: 40 },
-		[theme.breakpoints.down("590")]: { width: "40px", margin: "5px" },
+		width: "10%",
+		height: "80%",
+		margin: "5px",
 	},
 	Logo: {
 		width: 220,
@@ -52,8 +42,8 @@ const useStyles = makeStyles((theme) => ({
 			marginRight: 10,
 		},
 		[theme.breakpoints.down("900")]: {
-			width: 160,
-			height: 57,
+			width: 70,
+			height: 70,
 			marginRight: 10,
 			marginTop: "-10px",
 		},
@@ -61,6 +51,10 @@ const useStyles = makeStyles((theme) => ({
 			width: 70,
 			height: 70,
 			marginTop: "-12px",
+		},
+		[theme.breakpoints.down("590")]: {
+			marginRight: "0px",
+			marginLeft: "-15px",
 		},
 		[theme.breakpoints.down("590")]: {
 			marginRight: "0px",
@@ -74,8 +68,8 @@ const useStyles = makeStyles((theme) => ({
 		fontSize: 14,
 	},
 	ActionBloc: {
-		width: "35vw",
-		minWidth: "250px",
+		width: "100%",
+		minWidth:'130px',
 		fontSize: "14px",
 		marginLeft: "25px",
 		[theme.breakpoints.down("1100")]: {
@@ -123,11 +117,11 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down("630")]: { width: "60px" },
 	},
 	ButtonBloc: {
-		//  backgroundColor: 'black',
-		width: "13vw",
-		right: "0px",
+		width: "25%",
+		right: 0,
 		height: "40px",
-
+		display: "flex",
+		Float: "right",
 		[theme.breakpoints.down("650")]: { marginRight: "0px" },
 	},
 	ActionText: {
@@ -138,9 +132,8 @@ const useStyles = makeStyles((theme) => ({
 const ButtonSpe = styled(Button)({
 	boxShadow: "none",
 	textTransform: "none",
-	width: "13vw",
-	minWidth: "140px",
-	height: "40px",
+	width: "60%",
+	height: "100%",
 	fontSize: 14,
 	padding: "6px 12px",
 	lineHeight: 1.5,
@@ -160,7 +153,7 @@ export default function MenuAppBar(props) {
 	const classes = useStyles();
 
 	var color;
-	
+
 	if (props.id === "1") color = { color: "black" };
 	else color = { color: "white" };
 	function useWindowSize() {
@@ -181,7 +174,7 @@ export default function MenuAppBar(props) {
 				position="static"
 				style={{ background: "transparent", boxShadow: "none" }}>
 				<Toolbar className={classes.Toolbar}>
-					{getWindowDimensions() <= 800 && props.id === "0" && (
+					{getWindowDimensions() <= 900 && props.id === "0" && (
 						<div
 							className={classes.LogoBloc}
 							onClick={(e) => {
@@ -190,7 +183,7 @@ export default function MenuAppBar(props) {
 							<img src={Logo1} className={classes.Logo} alt="fireSpot" />
 						</div>
 					)}
-					{getWindowDimensions() > 800 && props.id === "0" && (
+					{getWindowDimensions() > 900 && props.id === "0" && (
 						<div
 							className={classes.LogoBloc}
 							onClick={(e) => {
@@ -199,7 +192,7 @@ export default function MenuAppBar(props) {
 							<img src={Logo} className={classes.Logo} alt="fireSpot" />
 						</div>
 					)}
-					{getWindowDimensions() <= 800 && props.id === "1" && (
+					{getWindowDimensions() <= 900 && props.id === "1" && (
 						<div
 							className={classes.LogoBloc}
 							onClick={(e) => {
@@ -208,7 +201,7 @@ export default function MenuAppBar(props) {
 							<img src={Logo1n} className={classes.Logo} alt="fireSpot" />
 						</div>
 					)}
-					{getWindowDimensions() > 800 && props.id === "1" && (
+					{getWindowDimensions() > 900 && props.id === "1" && (
 						<div
 							className={classes.LogoBloc}
 							onClick={(e) => {
@@ -220,7 +213,6 @@ export default function MenuAppBar(props) {
 
 					{getWindowDimensions() > 1000 && (
 						<div className={classes.vide}>
-							<Typography></Typography>
 						</div>
 					)}
 					<div className={classes.ActionBloc}>
@@ -237,7 +229,7 @@ export default function MenuAppBar(props) {
 										fontFamily: " 'Manrope', sans-serif",
 										fontWeight: "bold",
 										color: color.color,
-										fontSize: 14,
+										fontSize: "100%",
 									}}
 									component="div"
 									align={"center"}></Typography>
@@ -257,7 +249,7 @@ export default function MenuAppBar(props) {
 											fontFamily: " 'Manrope', sans-serif",
 											fontWeight: "bold",
 											color: color.color,
-											fontSize: 14,
+											fontSize: "100%",
 										}}
 										component="div"
 										align={"center"}
@@ -285,7 +277,7 @@ export default function MenuAppBar(props) {
 											fontFamily: " 'Manrope', sans-serif",
 											fontWeight: "bold",
 											color: color.color,
-											fontSize: 14,
+											fontSize: "100%",
 										}}
 										component="div"
 										align={"center"}>
@@ -307,7 +299,7 @@ export default function MenuAppBar(props) {
 										fontFamily: " 'Manrope', sans-serif",
 										fontWeight: "bold",
 										color: color.color,
-										fontSize: 14,
+										fontSize: "100%",
 									}}
 									component="div"
 									onClick={(e) => {

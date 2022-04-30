@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 		//[theme.breakpoints.down("750")]: { height: "550px",},
 	},
 	Carre: {
-		width: "350px",
+		width: "20%",
 		height: "350px",
 	},
 	Contenu: {
@@ -70,7 +70,7 @@ export default function LandingPage() {
 			<div className={classes.Corp7} id="About">
 				<div style={{ height: "70px" }}></div>
 				<div className={classes.BlocEcris}>
-					<div style={{ width: "750px", height: "350px" }}>
+					<div style={{ width: "70%", height: "350px" }}>
 						<Box className={classes.Text}>
 							We are currently in our Beta testing phase so it would nice if we
 							stay close, we want to here what do you think about our plaltform
@@ -86,7 +86,7 @@ export default function LandingPage() {
 							Join our Journey and let’s make a Cultural change ✨
 						</Box>
 					</div>
-					<div style={{ width: "150px" }}></div>
+					<div style={{ width: "20%" }}></div>
 					<div className={classes.Carre}>
 						<div className={classes.Contenu}>
 							<div style={{ height: "80px" }}></div>

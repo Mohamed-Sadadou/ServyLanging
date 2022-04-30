@@ -3,26 +3,34 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Service from "../Composant/Service";
 
-
 const useStyles = makeStyles((theme) => ({
 	Corp3: {
-		width: "98.9vw",
+		width: "100%",
 		height: "1300px",
 		minHeight: "1300px",
 		backgroundColor: "#F8FBF9",
-		[theme.breakpoints.down("1300")]: { height: "1700px", },
-    [theme.breakpoints.down("880")]: { height: "2800px", },
+		[theme.breakpoints.down("1300")]: { height: "1700px" },
+		[theme.breakpoints.down("880")]: { height: "2800px" },
+		[theme.breakpoints.down("469")]: { height: "3000px" },
 	},
 	Contenu: {
 		height: "1030px",
-		width: "1260px",
+		width: "90%",
 		padding: "30px",
 		marginLeft: "auto",
 		marginRight: "auto",
 		display: "grid",
 		gridTemplateColumns: "repeat(3, 1fr)",
-		[theme.breakpoints.down("1300")]: {width: "900px",height: "1400px", 	gridTemplateColumns: "repeat(2, 1fr)",},
-    [theme.breakpoints.down("880")]: {width: "450px",height: "2600px", 	gridTemplateColumns: "repeat(1, 1fr)",},
+		[theme.breakpoints.down("1300")]: {
+			width: "85%",
+			height: "1400px",
+			gridTemplateColumns: "repeat(2, 1fr)",
+		},
+		[theme.breakpoints.down("880")]: {
+			width: "80%",
+			height: "2600px",
+			gridTemplateColumns: "repeat(1, 1fr)",
+		},
 	},
 }));
 

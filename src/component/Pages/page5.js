@@ -14,7 +14,7 @@ const Buttone = styled(Button)({
 	fontFamily: " 'Manrope', sans-serif",
 	boxShadow: "none",
 	textTransform: "none",
-	width: "270px",
+	width: "100%",
 	height: "50px",
 	fontSize: 16,
 	padding: "6px 12px",
@@ -32,7 +32,7 @@ const Buttone2 = styled(Button)({
 	fontFamily: " 'Manrope', sans-serif",
 	boxShadow: "none",
 	textTransform: "none",
-	width: "130px",
+	width: "100%",
 	height: "50px",
 	fontSize: 16,
 	padding: "6px 12px",
@@ -59,14 +59,11 @@ const useStyles = makeStyles((theme) => ({
 		marginRight: "auto",
 		marginTop: "-30px",
 		height: "50px",
-		width: "720px",
+		width: "60%",
 		backgroundColor: "#E6F0FF",
 		borderRadius: "5px",
 		display: "grid",
 		gridTemplateColumns: "repeat(2, 1fr)",
-
-		[theme.breakpoints.down("770")]: { width: "550px" },
-    [theme.breakpoints.down("601")]: { width: "400px" },
 	},
 	entete: {
 		height: "70px",
@@ -97,7 +94,7 @@ const useStyles = makeStyles((theme) => ({
 	Titre: {
 		fontFamily: " 'Manrope', sans-serif",
 		color: "black",
-		width: "50vw",
+		width: "60%",
 		minWidth: "380px",
 		marginLeft: "auto",
 		marginRight: "auto",
@@ -111,11 +108,10 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down("1050")]: { fontSize: "26px", marginTop: "20px" },
 	},
 	input: {
-		width: "450px",
+		width: "100%",
 		height: "45px",
 		marginTop: "5px",
 		borderRadius: "5px 0px 00px 5px",
-		[theme.breakpoints.down("770")]: { width: "290px" },
 	},
 }));
 
