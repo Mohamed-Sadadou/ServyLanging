@@ -134,7 +134,7 @@ const Contenu = (p) => {
 					color: "#2A313C",
 					display: "flex",
 					flexdirection: "row",
-					fontSize: "5vw",
+					fontSize: "18px",
 					maxFontSize:'22px',
 					marginTop: "10px",
 					fontWeight: "700",
@@ -148,7 +148,7 @@ const Contenu = (p) => {
 					color: "#536379",
 					display: "flex",
 					flexdirection: "row",
-					fontSize: "18px",
+					fontSize: "14px",
 					marginTop: "10px",
 					fontWeight: "500",
 				}}>

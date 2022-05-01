@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     height: "1800px",
     [theme.breakpoints.down("1000")]: { height: "1500px" },
     [theme.breakpoints.down("660")]: { height: "1350px" },
-    [theme.breakpoints.down("500")]: { height: "3200px" },
+    [theme.breakpoints.down("500")]: { height: "2500px" },
   
   },
   bloc: {

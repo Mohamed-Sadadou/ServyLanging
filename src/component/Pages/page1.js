@@ -203,8 +203,7 @@ export default function LandingPage() {
 
 	//************************************************* */
 	return (
-		<div id="first">
-			<div>
+	
 				<div className={classes.Corp1}>
 					<NavBar id="0" />
 					<div>
@@ -270,8 +269,7 @@ export default function LandingPage() {
 						)}
 					</div>
 				</div>
-			</div>
-		</div>
+			
 	);
 
 	//******************************************** */

@@ -43,9 +43,16 @@ const useStyles = makeStyles((theme) => ({
 	BlocContent: {
 		width: "100%",
 		height: "100%",
+		marginRight:'10px',
 	},
 	ContenuEcris: {
 		width: "50%",
+		height: "80%",
+		marginRight: "auto",
+		marginLeft: "auto",
+	},
+	ContenuEcris2: {
+		width: "100%",
 		height: "80%",
 		marginRight: "auto",
 		marginLeft: "auto",
@@ -167,7 +174,7 @@ export default function BasicCard(props) {
 						{getWindowDimensions() > 750 && (
 							<div style={{ height: "80px" }}></div>
 						)}
-						<div className={classes.ContenuEcris}>
+						<div className={classes.ContenuEcris2}>
 							<Typography>
 								<Box className={classes.TitreBleu}>{props.Titre}</Box>
 								{getWindowDimensions() <= 660 && (
