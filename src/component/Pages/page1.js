@@ -7,8 +7,6 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 import Back1 from "../../Images/arriere1.jpg";
-import Back2 from "../../Images/arriere2.jpg";
-import Back3 from "../../Images/arriere3.jpg";
 import NavBar from "../Composant/NavBar";
 
 import "react-slideshow-image/dist/styles.css";
@@ -205,6 +203,7 @@ export default function LandingPage() {
 							align={"center"}>
 							Start Your Online Presence
 						</Typography>
+						{getWindowDimensions()}
 						<div className={classes.Boite1}>
 							<Box className={classes.Titre1a}>from </Box>
 							<div className={classes.Boite}> </div>
