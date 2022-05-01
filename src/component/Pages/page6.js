@@ -30,26 +30,23 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down("1100")]: { fontSize: "20px" },
 		[theme.breakpoints.down("900")]: { fontSize: "18px", marginTop: "20px" },
 		[theme.breakpoints.down("750")]: { fontSize: "16px", marginTop: "20px" },
-		[theme.breakpoints.down("600")]: { fontSize: "14px", marginTop: "20px" },
+		[theme.breakpoints.down("645")]: { fontSize: "14px", marginTop: "20px" },
 		[theme.breakpoints.down("490")]: { fontSize: "10px", marginTop: "20px" },
 		[theme.breakpoints.down("250")]: { fontSize: "8px", marginTop: "20px" },
 	},
 	BlocEcris: {
-		width: "90vw",
-		height: "65vh",
+		width: "90%",
+		height: "50%",
 		marginLeft: "auto",
 		marginRight: "auto",
 		display: "flex",
 		flexDirection: "row",
-		//[theme.breakpoints.down("750")]: { height: "550px",},
 	},
 	Carre: {
 		width: "20%",
-		height: "350px",
 	},
 	Contenu: {
-		width: "150px",
-		height: "220px",
+		width: "100%",
 	},
 	Logo: {
 		width: "20vw",
@@ -58,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
 		"&:hover": { cursor: "pointer" },
 	},
 	ContenuLinks: {
-		width: "90vw",
+		width: "90%",
 		height: "120px",
 		marginLeft: "auto",
 		marginRight: "auto",
@@ -93,7 +90,7 @@ export default function LandingPage() {
 					<div style={{ width: "20%" }}></div>
 					<div className={classes.Carre}>
 						<div className={classes.Contenu}>
-							<div style={{ height: "80px" }}></div>
+							<div style={{ height: "80px",width:'60%', }}></div>
 							<Link
 							activeClass="active"
 							to="first"

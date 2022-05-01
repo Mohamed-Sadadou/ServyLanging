@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	BlocTitre: {
 		height: "80px",
-		width: "80vw",
+		width: "80%",
 		marginLeft: "80px",
 	},
 	Titre: {
