@@ -20,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
 		backgroundPosition: "left bottom",
 		backgroundRepeat: "no-repeat",
 		backgroundImage: `url(${back1})`,
+		backgroundColor: "#9AC3FE",
+		[theme.breakpoints.down("530")]: {	width: "250px",height: "360px",},
+		[theme.breakpoints.down("380")]: {	width: "180px",height: "360px",},
 	},
 	b2: {
 		height: "300px",
@@ -29,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
 		backgroundPosition: "left bottom",
 		backgroundRepeat: "no-repeat",
 		backgroundImage: `url(${back2})`,
+		[theme.breakpoints.down("530")]: {	width: "250px",height: "360px",},
 	},
 	b3: {
 		height: "300px",
@@ -38,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
 		backgroundPosition: "left bottom",
 		backgroundRepeat: "no-repeat",
 		backgroundImage: `url(${back3})`,
+		[theme.breakpoints.down("530")]: {	width: "250px",height: "360px",},
 	},
 	b4: {
 		height: "300px",
@@ -47,6 +52,7 @@ const useStyles = makeStyles((theme) => ({
 		backgroundPosition: "left bottom",
 		backgroundRepeat: "no-repeat",
 		backgroundImage: `url(${back4})`,
+		[theme.breakpoints.down("530")]: {	width: "250px",height: "360px",},
 	},
 	b5: {
 		height: "300px",
@@ -56,6 +62,7 @@ const useStyles = makeStyles((theme) => ({
 		backgroundPosition: "left bottom",
 		backgroundRepeat: "no-repeat",
 		backgroundImage: `url(${back5})`,
+		[theme.breakpoints.down("530")]: {	width: "250px",height: "360px",},
 	},
 	b6: {
 		height: "300px",
@@ -65,6 +72,7 @@ const useStyles = makeStyles((theme) => ({
 		backgroundPosition: "left bottom",
 		backgroundRepeat: "no-repeat",
 		backgroundImage: `url(${back6})`,
+		[theme.breakpoints.down("530")]: {	width: "250px",height: "360px",},
 	},
 	b7: {
 		height: "300px",
@@ -74,6 +82,8 @@ const useStyles = makeStyles((theme) => ({
 		backgroundPosition: "left bottom",
 		backgroundRepeat: "no-repeat",
 		backgroundImage: `url(${back7})`,
+		[theme.breakpoints.down("530")]: {	width: "250px",height: "360px",},
+		
 	},
 	b8: {
 		height: "300px",
@@ -83,6 +93,8 @@ const useStyles = makeStyles((theme) => ({
 		backgroundPosition: "left bottom",
 		backgroundRepeat: "no-repeat",
 		backgroundImage: `url(${back8})`,
+		[theme.breakpoints.down("530")]: {	width: "250px",height: "360px",},
+		
 	},
 	act: {
 		fontFamily: " 'Manrope', sans-serif",
@@ -95,6 +107,9 @@ const useStyles = makeStyles((theme) => ({
 		"&:hover": { cursor: "pointer" },
 		width: "120px",
 	},
+	title:{
+		
+	}
 }));
 const Contenu = (p) => {
 	return (
@@ -105,7 +120,8 @@ const Contenu = (p) => {
 					color: "#2A313C",
 					display: "flex",
 					flexdirection: "row",
-					fontSize: "22px",
+					fontSize: "5vw",
+					maxFontSize:'22px',
 					marginTop: "10px",
 					fontWeight: "700",
 				}}>
@@ -113,7 +129,7 @@ const Contenu = (p) => {
 			</Box>
 			<Box
 				style={{
-					width: "280px",
+					width: "100%",
 					fontFamily: " 'Manrope', sans-serif",
 					color: "#536379",
 					display: "flex",
@@ -138,7 +154,7 @@ export default function BasicCard(props) {
 					<div
 						style={{
 							height: "280px",
-							width: "320px",
+							width: "85%",
 							marginRight: "auto",
 							marginLeft: "auto",
 						}}>
@@ -159,7 +175,7 @@ export default function BasicCard(props) {
 					<div
 						style={{
 							height: "280px",
-							width: "320px",
+							width: "85%",
 							marginRight: "auto",
 							marginLeft: "auto",
 						}}>
@@ -180,7 +196,7 @@ export default function BasicCard(props) {
 					<div
 						style={{
 							height: "280px",
-							width: "320px",
+							width: "85%",
 							marginRight: "auto",
 							marginLeft: "auto",
 						}}>
@@ -201,7 +217,7 @@ export default function BasicCard(props) {
 					<div
 						style={{
 							height: "280px",
-							width: "320px",
+							width: "85%",
 							marginRight: "auto",
 							marginLeft: "auto",
 						}}>
@@ -222,7 +238,7 @@ export default function BasicCard(props) {
 					<div
 						style={{
 							height: "280px",
-							width: "320px",
+							width: "85%",
 							marginRight: "auto",
 							marginLeft: "auto",
 						}}>
@@ -243,7 +259,7 @@ export default function BasicCard(props) {
 					<div
 						style={{
 							height: "280px",
-							width: "320px",
+							width: "85%",
 							marginRight: "auto",
 							marginLeft: "auto",
 						}}>
@@ -264,7 +280,7 @@ export default function BasicCard(props) {
 					<div
 						style={{
 							height: "280px",
-							width: "320px",
+							width: "85%",
 							marginRight: "auto",
 							marginLeft: "auto",
 						}}>
@@ -285,7 +301,7 @@ export default function BasicCard(props) {
 					<div
 						style={{
 							height: "280px",
-							width: "320px",
+							width: "85%",
 							marginRight: "auto",
 							marginLeft: "auto",
 						}}>
