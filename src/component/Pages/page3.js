@@ -20,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
 		padding: "30px",
 		marginLeft: "auto",
 		marginRight: "auto",
-		backgroundColor: "red",
 		display: "grid",
 		gridTemplateColumns: "repeat(3, 1fr)",
 		[theme.breakpoints.down("1300")]: {

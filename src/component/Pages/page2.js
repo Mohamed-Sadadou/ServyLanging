@@ -15,7 +15,8 @@ const useStyles = makeStyles((theme) => ({
     height: "1800px",
     [theme.breakpoints.down("1000")]: { height: "1500px" },
     [theme.breakpoints.down("660")]: { height: "1350px" },
-    backgroundImage: "#F6FEF6",
+    [theme.breakpoints.down("500")]: { height: "3200px" },
+  
   },
   bloc: {
     marginLeft: "auto",
@@ -28,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     [theme.breakpoints.down("1000")]: { height: "1200px" },
     [theme.breakpoints.down("660")]: { height: "1040px" },
+    [theme.breakpoints.down("500")]: { height: "2200px" },
   },
   BlocTitre: {
     width: "92%",
