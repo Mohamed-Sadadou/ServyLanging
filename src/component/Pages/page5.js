@@ -68,16 +68,16 @@ const useStyles = makeStyles((theme) => ({
 	entete: {
 		height: "70px",
 		padding: "10px",
-		width: "98.5vw",
+		width: "100%",
 		display: "grid",
+	
 		gridTemplateColumns: "repeat(3, 1fr)",
 	},
 	trait: {
 		height: "1px",
-		width: "32vw",
+		width: "100%",
 		backgroundColor: "#C4C4C4",
 		marginTop: "30px",
-		[theme.breakpoints.down("900")]: { width: "28vw" },
 	},
 	ins: {
 		fontFamily: " 'Manrope', sans-serif",
@@ -90,12 +90,13 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down("1380")]: { fontSize: "26px" },
 		[theme.breakpoints.down("1200")]: { fontSize: "18px" },
 		[theme.breakpoints.down("900")]: { fontSize: "14px", marginTop: "20px" },
+		[theme.breakpoints.down("580")]: { fontSize: "10px", marginTop: "20px" },
+		[theme.breakpoints.down("350")]: { fontSize: "8px", },
 	},
 	Titre: {
 		fontFamily: " 'Manrope', sans-serif",
 		color: "black",
 		width: "60%",
-		minWidth: "380px",
 		marginLeft: "auto",
 		marginRight: "auto",
 		marginTop: "-5px",
@@ -106,6 +107,9 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down("1380")]: { fontSize: "42px" },
 		[theme.breakpoints.down("1200")]: { fontSize: "34px" },
 		[theme.breakpoints.down("1050")]: { fontSize: "26px", marginTop: "20px" },
+		[theme.breakpoints.down("900")]: { fontSize: "22px" },
+		[theme.breakpoints.down("580")]: { fontSize: "16px", },
+		[theme.breakpoints.down("350")]: { fontSize: "12px", },
 	},
 	input: {
 		width: "100%",

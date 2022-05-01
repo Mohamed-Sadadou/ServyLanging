@@ -18,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
 		marginTop: "15px",
 		"text-decoration-line": "underline",
 		"&:hover": { cursor: "pointer" },
+		[theme.breakpoints.down("550")]: { fontSize: "16px", },
+		[theme.breakpoints.down("490")]: { fontSize: "12px", },
+		[theme.breakpoints.down("250")]: { fontSize: "10px", marginTop: "20px" },
 	},
 	Text: {
 		fontFamily: " 'Manrope', sans-serif",
@@ -27,8 +30,9 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down("1100")]: { fontSize: "20px" },
 		[theme.breakpoints.down("900")]: { fontSize: "18px", marginTop: "20px" },
 		[theme.breakpoints.down("750")]: { fontSize: "16px", marginTop: "20px" },
-
-		[theme.breakpoints.down("550")]: { fontSize: "14px", marginTop: "20px" },
+		[theme.breakpoints.down("600")]: { fontSize: "14px", marginTop: "20px" },
+		[theme.breakpoints.down("490")]: { fontSize: "10px", marginTop: "20px" },
+		[theme.breakpoints.down("250")]: { fontSize: "8px", marginTop: "20px" },
 	},
 	BlocEcris: {
 		width: "90vw",

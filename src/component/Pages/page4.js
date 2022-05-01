@@ -39,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
 		flexdirection: "row",
 		fontSize: "55px",
 		fontWeight: "bold",
+		[theme.breakpoints.down("850")]: { fontSize: "48px", },
+		[theme.breakpoints.down("700")]: { fontSize: "45px", },
+		[theme.breakpoints.down("570")]: { fontSize: "35px", },
 	},
 	Bloc1: {
 		height: "80px",
@@ -61,6 +64,7 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down("1380")]: { fontSize: "32px" },
 		[theme.breakpoints.down("1100")]: { fontSize: "26px" },
 		[theme.breakpoints.down("900")]: { fontSize: "18px" },
+		[theme.breakpoints.down("570")]: { fontSize: "16px" },
 	},
 	WorkDesc: {
 		fontFamily: " 'Manrope', sans-serif",
@@ -73,6 +77,7 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down("1380")]: { fontSize: "22px" },
 		[theme.breakpoints.down("1100")]: { fontSize: "16px" },
 		[theme.breakpoints.down("900")]: { fontSize: "14px" },
+		[theme.breakpoints.down("570")]: { fontSize: "12px" },
 	},
 	BlocEcris: {
 		height: "130px",

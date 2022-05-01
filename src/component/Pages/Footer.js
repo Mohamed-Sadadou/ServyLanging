@@ -8,10 +8,9 @@ import twitter from "../../Images/twitter.png";
 
 const useStyles = makeStyles((theme) => ({
 	Corp8: {
+		marginTop:'5px',
 		height: "60px",
 		position: "static",
-		//backgroundColor:'blue',
-		//position: "fixed",
 		left: 0,
 		bottom: 0,
 		width: "100%",
@@ -34,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down("850")]: { fontSize: "14px" },
 		[theme.breakpoints.down("590")]: { fontSize: "11px" },
 		[theme.breakpoints.down("550")]: { fontSize: "9px", marginTop: "20px" },
+		[theme.breakpoints.down("485")]: { fontSize: "5px", marginTop: "25px" },
 	},
 	Logo: {
 		width: 30,
@@ -41,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
 		marginLeft: 10,
 		"&:hover": { cursor: "pointer" },
 		[theme.breakpoints.down("850")]: { width: 15, height: 15 },
+		[theme.breakpoints.down("485")]: { width: 10, height: 10 },
 	},
 }));
 
@@ -52,15 +53,15 @@ export default function LandingPage() {
 		<div>
 			<div className={classes.Corp8}>
 				<div style={{ display: "flex", flexdirection: "row" }}>
-					<div style={{ width: "40vw" }}>
+					<div style={{ width: "20%" ,}}>
 						<Box className={classes.Ecris}>2022 Algeria</Box>
 					</div>
-					<div style={{ width: "20vw" }}>
+					<div style={{ width: "50%",  }}>
 						<Box className={classes.Ecris} component="div" align={"center"}>
 							servy.mass.dz@gmail.com
 						</Box>
 					</div>
-					<div style={{ width: "40vw", height: "60px" }}>
+					<div style={{ width: "30%", height: "60px" }}>
 						<div className={classes.bloc}>
 							<img
 								src={twitter}
