@@ -132,7 +132,7 @@ const useStyles = makeStyles((theme) => ({
 const ButtonSpe = styled(Button)({
 	boxShadow: "none",
 	textTransform: "none",
-	width: "60%",
+	width: "90%",
 	height: "100%",
 	fontSize: 14,
 	padding: "6px 12px",

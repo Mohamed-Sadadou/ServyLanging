@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down("1300")]: { height: "1700px" },
 		[theme.breakpoints.down("880")]: { height: "2800px" },
 		[theme.breakpoints.down("469")]: { height: "3000px" },
+		[theme.breakpoints.down("530")]: { height: "3600px" },
 	},
 	Contenu: {
 		height: "1030px",
@@ -19,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
 		padding: "30px",
 		marginLeft: "auto",
 		marginRight: "auto",
+		backgroundColor: "red",
 		display: "grid",
 		gridTemplateColumns: "repeat(3, 1fr)",
 		[theme.breakpoints.down("1300")]: {
@@ -30,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
 			width: "80%",
 			height: "2600px",
 			gridTemplateColumns: "repeat(1, 1fr)",
+		},
+		[theme.breakpoints.down("530")]: {
+			height: "3200px",
 		},
 	},
 }));
