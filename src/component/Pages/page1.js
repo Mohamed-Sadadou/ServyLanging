@@ -63,19 +63,8 @@ const useStyles = makeStyles((theme) => ({
 		height: "100vh",
 		backgroundImage: `url(${Back1})`,
 		backgroundPosition: "center",
+		backgroundRepeat: "no-repeat",
 		[theme.breakpoints.down("470")]: {height: "80vh", },
-	},
-	Corp2: {
-		width: "100%",
-		height: "100vh",
-		backgroundImage: `url(${Back2})`,
-		backgroundPosition: "center",
-	},
-	Corp3: {
-		width: "100%",
-		height: "100vh",
-		backgroundImage: `url(${Back3})`,
-		backgroundPosition: "center",
 	},
 
 	Titre: {
