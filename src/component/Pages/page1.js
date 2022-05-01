@@ -58,11 +58,10 @@ const useStyles = makeStyles((theme) => ({
 	},
 	Corp1: {
 		width: "100%",
-		height: "100vh",
+		height: "600px",
 		backgroundImage: `url(${Back1})`,
 		backgroundPosition: "center",
 		backgroundRepeat: "no-repeat",
-		[theme.breakpoints.down("470")]: {height: "80vh", },
 	},
 
 	Titre: {
