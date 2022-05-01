@@ -202,7 +202,6 @@ export default function LandingPage() {
 							align={"center"}>
 							Start Your Online Presence
 						</Typography>
-						{getWindowDimensions()}
 						<div className={classes.Boite1}>
 							<Box className={classes.Titre1a}>from </Box>
 							<div className={classes.Boite}> </div>
