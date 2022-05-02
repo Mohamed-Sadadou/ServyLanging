@@ -61,7 +61,6 @@ const useStyles = makeStyles((theme) => ({
 		height: "600px",
 		backgroundImage: `url(${Back1})`,
 		backgroundPosition: "center",
-		backgroundRepeat: "no-repeat",
 	},
 
 	Titre: {
@@ -142,6 +141,7 @@ const useStyles = makeStyles((theme) => ({
 		height: "45px",
 		marginTop: "5px",
 		borderRadius: "5px 0px 00px 5px",
+		[theme.breakpoints.down("375")]: { fontSize:'2px' },
 	},
 	footer: {
 		height: "100px",

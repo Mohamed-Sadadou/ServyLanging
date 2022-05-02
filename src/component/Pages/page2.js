@@ -33,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
   },
   BlocTitre: {
     width: "92%",
-    
     height: "180px",
     marginLeft: "auto",
     marginRight: "auto",
@@ -120,32 +119,32 @@ export default function LandingPage() {
     <div>
       <div className={classes.Corp2} id="2">
         <div className={classes.vide2}>
-          {" "}
-          <Typography> </Typography>{" "}
+          
+          <Typography> </Typography>
         </div>
         <div className={classes.BlocTitre}>
           <div className={classes.BlocTitreEcris}>
-            <div style={{ height: "30px" }}> </div>{" "}
+            <div style={{ height: "30px" }}> </div>
             <Typography
               style={{ display: "flex", flexdirection: "row" }}
               component="div"
               align={"left"}
             >
-              <Box className={classes.EcrisBleu}>Servy </Box>{" "}
-              <Box className={classes.Ecris1}> , Your Place To Start Your </Box>{" "}
-            </Typography>{" "}
+              <Box className={classes.EcrisBleu}>Servy </Box>
+              <Box className={classes.Ecris1}> , Your Place To Start Your </Box>
+            </Typography>
             <Typography
               className={classes.Ecris2}
               component="div"
               align={"left"}
             >
-              Selling Online Business...{" "}
-            </Typography>{" "}
-          </div>{" "}
+              Selling Online Business...
+            </Typography>
+          </div>
           <div className={classes.BlocLogo}>
-            <div style={{ height: "30px" }}> </div>{" "}
+            <div style={{ height: "30px" }}> </div>
             <img src={Logo} className={classes.Logo} alt="fireSpot" />
-          </div>{" "}
+          </div>
         </div>
         <div className={classes.bloc}>
           <Presenta
@@ -163,8 +162,8 @@ export default function LandingPage() {
             Titre="Custimize your Shop to be Different."
             Desc=" Create a shop and start filling it with your physical shop products so you can start beiung known to the customers"
           />
-        </div>{" "}
-      </div>{" "}
+        </div>
+      </div>
     </div>
   );
 
