@@ -1,5 +1,5 @@
 import React from "react";
-import {useState, useLayoutEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
@@ -16,21 +16,23 @@ import f5 from "../../Images/f5.png";
 import f6 from "../../Images/f6.png";
 
 function getWindowDimensions() {
-	const { innerWidth: width, } = window;
+	const { innerWidth: width } = window;
 	return width;
 }
 const Buttone = styled(Button)({
 	fontFamily: " 'Manrope', sans-serif",
 	boxShadow: "none",
 	textTransform: "none",
-	width: "270px",
+	width: "100%",
 	height: "50px",
+	maxWidth: "250px",
 	fontSize: 16,
 	padding: "6px 12px",
 	lineHeight: 1.5,
 	borderRadius: "0px 5px 5px 0px",
-	backgroundColor: "#68A6FD",
-	color: "white",
+	backgroundColor: "#9AC3FE",
+	color: "black",
+	fontWeight: "bold",
 	"&:hover": {
 		backgroundColor: "#68A6FD",
 	},
@@ -39,14 +41,15 @@ const Buttone2 = styled(Button)({
 	fontFamily: " 'Manrope', sans-serif",
 	boxShadow: "none",
 	textTransform: "none",
-	width: "200px",
-	height: "40px",
+	width: "100%",
+	height: "35px",
 	fontSize: 16,
 	padding: "6px 12px",
 	lineHeight: 1.5,
 	borderRadius: "0px 5px 5px 0px",
-	backgroundColor: "#68A6FD",
-	color: "white",
+	backgroundColor: "#9AC3FE",
+	color: "black",
+	fontWeight: "bold",
 	"&:hover": {
 		backgroundColor: "#68A6FD",
 	},
@@ -80,14 +83,17 @@ const useStyles = makeStyles((theme) => ({
 		width: "85vw",
 		marginLeft: "auto",
 		marginRight: "auto",
+		[theme.breakpoints.down("373")]: { height: "110px" },
+		[theme.breakpoints.down("240")]: { height: "130px" },
 	},
 	BlocImg: {
 		height: "140px",
 		width: "85vw",
 		marginLeft: "auto",
 		marginRight: "auto",
+		marginTop: "6px",
 		[theme.breakpoints.down("1100")]: { height: "25vh" },
-		[theme.breakpoints.down("692")]: { height: "15vh" },
+		[theme.breakpoints.down("692")]: { height: "200px" },
 	},
 	Titre: {
 		fontFamily: " 'Manrope', sans-serif",
@@ -102,6 +108,7 @@ const useStyles = makeStyles((theme) => ({
 		fontFamily: " 'Manrope', sans-serif",
 		color: "#2A313C",
 		fontSize: "42px",
+		minWidth: "60px",
 		fontWeight: "bold",
 		[theme.breakpoints.down("1000")]: { fontSize: "35px" },
 		[theme.breakpoints.down("800")]: { fontSize: "31px" },
@@ -154,24 +161,30 @@ const useStyles = makeStyles((theme) => ({
 		width: "20px",
 	},
 	probButton: {
+		marginLeft: "auto",
+		marginRight: "auto",
+		marginTop: "50px",
 		height: "50px",
-		width: "80vw",
+		width: "90%",
+        maxWidth:'1400px',
 		backgroundColor: "#E6F0FF",
 		borderRadius: "5px",
 		display: "grid",
 		gridTemplateColumns: "repeat(2, 1fr)",
-		[theme.breakpoints.down("1000")]: { width: "650px" },
-		[theme.breakpoints.down("820")]: { width: "470px" },
-		[theme.breakpoints.down("600")]: { width: "400px", height: "40px" },
+		[theme.breakpoints.down("900")]: { width: "70%", maxWidth: "500px" },
+		[theme.breakpoints.down("590")]: { width: "80%" },
+		[theme.breakpoints.down("600")]: { height: "35px" },
 	},
 	input: {
-		width: "65vw",
+		width: "64vw",
+		maxWidth:'1150px',
 		height: "45px",
 		marginTop: "5px",
 		borderRadius: "5px 0px 00px 5px",
-		[theme.breakpoints.down("1000")]: { width: "480px" },
-		[theme.breakpoints.down("820")]: { width: "200px" },
-		[theme.breakpoints.down("600")]: { height: "35px" },
+		[theme.breakpoints.down("1525")]: { width: "60vw" },
+		[theme.breakpoints.down("1135")]: { width: "55vw" },
+		[theme.breakpoints.down("900")]: { width: "100%" },
+		[theme.breakpoints.down("600")]: { height: "30px" },
 	},
 	act: {
 		fontFamily: " 'Manrope', sans-serif",
@@ -188,14 +201,21 @@ const useStyles = makeStyles((theme) => ({
 	Imgs: {
 		display: "grid",
 		gridTemplateColumns: "repeat(6, 1fr)",
-		[theme.breakpoints.down("692")]: { gridTemplateColumns: "repeat(3, 1fr)", },
+		[theme.breakpoints.down("692")]: { gridTemplateColumns: "repeat(3, 1fr)" },
 	},
 	Logo: {
 		width: 150,
 		height: 150,
 		[theme.breakpoints.down("1000")]: { width: 100, height: 100 },
 		[theme.breakpoints.down("800")]: { width: 80, height: 80 },
-		[theme.breakpoints.down("692")]: { width: 65, height: 65, marginTop:'20px' },
+		[theme.breakpoints.down("692")]: {
+			width: 65,
+			height: 65,
+			marginTop: "20px",
+		},
+	},
+	corp: {
+		height: "600px",
 	},
 }));
 
@@ -219,7 +239,7 @@ export default function LandingPage(props) {
 	return (
 		<div className={classes.Corp1}>
 			<NavBar id="1" />
-			<div style={{ height: "77vh" }}>
+			<div className={classes.corp}>
 				<div style={{ height: "10px" }}></div>
 				<div className={classes.BlocTitre}>
 					<Box className={classes.Titre} component="div" align={"center"}>
@@ -258,7 +278,9 @@ export default function LandingPage(props) {
 								variant="contained"
 								disableRipple
 								onClick={(e) => {
-									alert("Cette fonctionnalité n'est pas encore lancé restez branché pour son lancement !! ");
+									alert(
+										"Cette fonctionnalité n'est pas encore lancé restez branché pour son lancement !! "
+									);
 								}}>
 								Register
 							</Buttone2>
@@ -268,7 +290,9 @@ export default function LandingPage(props) {
 								variant="contained"
 								disableRipple
 								onClick={(e) => {
-									alert("Cette fonctionnalité n'est pas encore lancé restez branché pour son lancement !! ");
+									alert(
+										"Cette fonctionnalité n'est pas encore lancé restez branché pour son lancement !! "
+									);
 								}}>
 								Get Registration Link
 							</Buttone>

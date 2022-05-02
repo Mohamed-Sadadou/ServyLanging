@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	ActionBloc: {
 		width: "100%",
-		minWidth:'130px',
+		minWidth: "130px",
 		fontSize: "14px",
 		marginLeft: "25px",
 		[theme.breakpoints.down("1100")]: {
@@ -127,12 +127,16 @@ const useStyles = makeStyles((theme) => ({
 	ActionText: {
 		"&:hover": { cursor: "pointer" },
 	},
+	vidos: {
+		width: "15%",
+		backgroundColor: "red",
+	},
 }));
 
 const ButtonSpe = styled(Button)({
 	boxShadow: "none",
 	textTransform: "none",
-	width: "90%",
+	width: "95%",
 	height: "100%",
 	fontSize: 14,
 	padding: "6px 12px",
@@ -211,10 +215,7 @@ export default function MenuAppBar(props) {
 						</div>
 					)}
 
-					{getWindowDimensions() > 1000 && (
-						<div className={classes.vide}>
-						</div>
-					)}
+					{getWindowDimensions() > 1000 && <div className={classes.vide}></div>}
 					<div className={classes.ActionBloc}>
 						<Link
 							activeClass="active"
@@ -314,6 +315,7 @@ export default function MenuAppBar(props) {
 						</Link>
 					</div>
 
+					<div className={classes.vidos}></div>
 					{getWindowDimensions() > 1100 && (
 						<div className={classes.ButtonBloc}>
 							<ButtonSpe
@@ -326,6 +328,7 @@ export default function MenuAppBar(props) {
 							</ButtonSpe>
 						</div>
 					)}
+
 					{getWindowDimensions() <= 1100 && (
 						<div className={classes.ButtonBloc}>
 							<ButtonSpe

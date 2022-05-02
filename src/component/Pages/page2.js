@@ -95,6 +95,8 @@ const useStyles = makeStyles((theme) => ({
     height: "20vw",
     marginTop: "-30px",
     [theme.breakpoints.down("600")]: { width: "150px", height: "150px" },
+    [theme.breakpoints.down("500")]: { width: "110px", height: "110px" },
+    [theme.breakpoints.down("360")]: { width: "90px", height: "90px" },
   },
 }));
 

@@ -30,7 +30,7 @@ const Buttone2 = styled(Button)({
 	boxShadow: "none",
 	textTransform: "none",
 	fontWeight:'bold',
-	width: "200px",
+	width: "100%",
 	height: "35px",
 	fontSize: 16,
 	padding: "6px 12px",
@@ -57,6 +57,8 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down("591")]: { width: "480px" },
 		[theme.breakpoints.down("591")]: { height: "35px" },
 		[theme.breakpoints.down("561")]: { width: "400px" },
+		[theme.breakpoints.down("445")]: { width: "300px" },
+		[theme.breakpoints.down("323")]: { width: "220px" },
 	},
     input: {
 		width: "450px",
@@ -65,7 +67,8 @@ const useStyles = makeStyles((theme) => ({
 		borderRadius: "5px 0px 00px 5px",
 		[theme.breakpoints.down("850")]: { width: "280px" },
 		[theme.breakpoints.down("591")]: { height: "30px" },
-		[theme.breakpoints.down("560")]: { width: "200px" },
+		[theme.breakpoints.down("560")]: { width: "100%" },
+		
 	},
 }));
 
