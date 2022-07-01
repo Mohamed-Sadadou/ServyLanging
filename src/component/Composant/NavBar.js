@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState, useLayoutEffect, useContext} from "react";
+import { useState, useLayoutEffect, useContext } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import { makeStyles } from "@material-ui/core/styles";
@@ -63,6 +63,11 @@ const useStyles = makeStyles((theme) => ({
 			marginRight: "0px",
 			marginLeft: "-15px",
 		},
+		[theme.breakpoints.down("400")]: {
+			width: 40,
+			height: 40,
+			marginTop: "5px",
+		},
 	},
 	act: {
 		fontFamily: " 'Manrope', sans-serif",
@@ -102,7 +107,7 @@ const useStyles = makeStyles((theme) => ({
 			marginRight: "50px",
 		},
 		[theme.breakpoints.down("590")]: { marginRight: "10px" },
-
+		[theme.breakpoints.down("400")]: { width: "50px", },
 		marginRight: "45px",
 		display: "flex",
 		flexDirection: "row",
@@ -124,18 +129,28 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down("630")]: { width: "60px" },
 	},
 	ButtonBloc: {
-		width: "15%",
+		width: "fit-content",
 		right: 0,
 		height: "40px",
 		display: "flex",
 		Float: "right",
 		[theme.breakpoints.down("650")]: { marginRight: "0px" },
+		[theme.breakpoints.down("450")]: {width: "50px", },
 	},
 	ActionText: {
 		"&:hover": { cursor: "pointer" },
 	},
 	vidos: {
 		width: "15%",
+	},
+	blockLangue: {
+		width: 100,
+		marginRight: 10,
+		marginLeft: 20,
+		marginTop: 8,
+	},
+	blockLangue2:{
+		width: 100, marginRight: 0, marginLeft: "auto" 
 	},
 }));
 const ButtonSpe = styled(Button)({
@@ -163,15 +178,15 @@ export default function MenuAppBar(props) {
 	const classes = useStyles();
 	var color;
 	const [Langue, setLangue] = useState("");
-	const {  setlangue } = useContext(LangueContext);
-	
+	const { setlangue } = useContext(LangueContext);
+
 	const handleChange = (event) => {
-	if(event.target.value==="fr"){
-		setLangue("fr");
-	}else{
-		setLangue("ang");
-	}
-		
+		if (event.target.value === "fr") {
+			setLangue("fr");
+		} else {
+			setLangue("ang");
+		}
+
 		setlangue(event.target.value);
 	};
 	if (props.id === "1") color = { color: "black" };
@@ -188,7 +203,7 @@ export default function MenuAppBar(props) {
 		return size;
 	}
 	useWindowSize();
-	
+
 	return (
 		<Box sx={{ flexGrow: 0, width: "100%" }}>
 			<AppBar
@@ -244,6 +259,7 @@ export default function MenuAppBar(props) {
 								duration={500}>
 								<div className={classes.ActionText}>
 									<Typography
+										className={classes.linkEcris}
 										style={{
 											fontFamily: " 'Manrope', sans-serif",
 											fontWeight: "bold",
@@ -315,11 +331,16 @@ export default function MenuAppBar(props) {
 							</div>
 						</Link>
 					</div>
-					<div style={{ width: 100,marginRight:10,marginLeft:20,marginTop:8}}>
-						<div sx={{ width: 100 ,marginRight:0,marginLeft:'auto'}}>
+					<div className={classes.blockLangue}>
+						<div className={classes.blockLangue2}>
 							<FormControl fullWidth>
 								<Select
-								sx={{width:'100px',height:'35px',fontSize:12,color: color.color,}}
+									sx={{
+										width: "100px",
+										height: "35px",
+										fontSize: 12,
+										color: color.color,
+									}}
 									value={Langue}
 									label="Langue"
 									onChange={handleChange}>
