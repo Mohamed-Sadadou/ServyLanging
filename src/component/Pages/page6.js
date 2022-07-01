@@ -1,4 +1,6 @@
 import React from "react";
+import { useState, useLayoutEffect, useContext, useEffect } from "react";
+import LangueContext from "../LangueContext";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@mui/material/Box";
@@ -6,7 +8,7 @@ import { Link } from "react-scroll";
 import Logo from "../../Images/Frame 458logo.svg";
 const useStyles = makeStyles((theme) => ({
 	Corp7: {
-		width: "98.9vw",
+		width: "100%",
 		height: "650px",
 		backgroundColor: "white",
 	},
@@ -39,19 +41,20 @@ const useStyles = makeStyles((theme) => ({
 		height: "50%",
 		marginLeft: "auto",
 		marginRight: "auto",
-		display: "flex",
-		flexDirection: "row",
+		display: 'flex',
+		flexDirection: 'row',
+		alignItems: 'center',
+		justifyContent: 'space-between',
 	},
 	Carre: {
-		width: "20%",
+		width: "25%",height:'350px',
 	},
 	Contenu: {
 		width: "100%",
 	},
 	Logo: {
-		width: "20vw",
-		height: "20vw",
-		marginTop: "-30px",
+		width: "100%",
+		height: "100%",
 		"&:hover": { cursor: "pointer" },
 	},
 	ContenuLinks: {
@@ -64,33 +67,44 @@ const useStyles = makeStyles((theme) => ({
 
 export default function LandingPage() {
 	const classes = useStyles();
-
+	const [Langue,setLangue]=useState("");
+	const { langue, setlangue } = useContext(LangueContext);
+	
+	if(langue!==Langue)	setLangue(langue);
+	var text;
+	if (Langue === "fr") {
+		text = {
+			content1:"Nous sommes actuellement dans notre phase de test bêta donc il serait bien que nous restions proches, nous voulons ici ce que vous pensez de notre plaltform et pourquoi ne pas nous rejoindre dans nos entretiens utilisateurs dans cette phase.",
+			content2:"Si vous voulez une place dans l’équipe de conseil ou dans l’équipe de construction, vous pouvez nous contacter dans nos liens ci-dessous.",
+			content3:"Servy est une plateforme et un écosystème qui tente de changer l’expérience du commerce électronique en Algérie d’abord et dans le monde à venir. Joignez-vous à notre parcours et changeons de culture ✨",
+		};
+	} else {
+		text = {
+			content1:"We are currently in our Beta testing phase so it would nice if we stay close, we want to here what do you think about our plaltform and why not join us in our user-interviews in this Phase.",
+			content2:"In case your want a place in the board team or in the building team you can contact us in our links bellow.",
+			content3:"Servy is platform and an Ecosystem that is trying to change the experience of the E-commerce in Algeria first and the world next. Join our Journey and let’s make a Cultural change ✨",
+		};
+	}
 	//************************************************* */
 	return (
 		<div>
 			<div className={classes.Corp7} id="About">
 				<div style={{ height: "70px" }}></div>
 				<div className={classes.BlocEcris}>
-					<div style={{ width: "70%", height: "350px" }}>
+					<div style={{ width: "60%", height: "350px", }}>
 						<Box className={classes.Text}>
-							We are currently in our Beta testing phase so it would nice if we
-							stay close, we want to here what do you think about our plaltform
-							and why not join us in our user-interviews in this Phase.
+						{text.content1}	
 						</Box>
 						<Box className={classes.Text}>
-							In case your want a place in the board team or in the building
-							team you can contact us in our links bellow.
+						{text.content2}
 						</Box>
 						<Box className={classes.Text}>
-							Servy is platform and an Ecosystem that is trying to change the
-							experience of the E-commerce in Algeria first and the world next.
-							Join our Journey and let’s make a Cultural change ✨
+						{text.content3}
 						</Box>
 					</div>
-					<div style={{ width: "20%" }}></div>
+					
 					<div className={classes.Carre}>
 						<div className={classes.Contenu}>
-							<div style={{ height: "80px",width:'60%', }}></div>
 							<Link
 							activeClass="active"
 							to="first"
@@ -117,15 +131,7 @@ export default function LandingPage() {
 							duration={500}>
 							<Box className={classes.Links}>About Us</Box>
 						</Link>
-						<Link
-							activeClass="active"
-							to="About"
-							spy={true}
-							smooth={true}
-							offset={-70}
-							duration={500}>
-							<Box className={classes.Links}></Box>
-						</Link>
+						
 						<Link
 							activeClass="active"
 							to="Services"

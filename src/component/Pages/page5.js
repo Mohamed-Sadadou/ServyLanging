@@ -1,5 +1,6 @@
 import React from "react";
-import {useState,useLayoutEffect } from "react";
+import { useState, useLayoutEffect, useContext, useEffect } from "react";
+import LangueContext from "../LangueContext";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import { styled } from "@mui/material/styles";
@@ -50,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
 		height: "50px",
 	},
 	Corp6: {
-		width: "98.9vw",
+		width: "100%",
 		height: "60vh",
 		backgroundColor: "#F7F3EE",
 	},
@@ -67,7 +68,6 @@ const useStyles = makeStyles((theme) => ({
 	},
 	entete: {
 		height: "70px",
-		padding: "10px",
 		width: "100%",
 		display: "grid",
 	
@@ -121,7 +121,29 @@ const useStyles = makeStyles((theme) => ({
 
 export default function LandingPage() {
 	const classes = useStyles();
+	const [Langue,setLangue]=useState("");
+	const { langue, setlangue } = useContext(LangueContext);
+	
+	if(langue!==Langue)	setLangue(langue);
+	var text;
+	if (Langue === "fr") {
+		text = {
+			desc:"C'est gratuit !",
+			titre:"VOUS ETES PRET POUR SERVY ?",
+			input:"Introduisez votre Email ✉️ ou Phone 📞",
+			bouton1:"Lien d'enregistrement",
+			bouton2:"Enregistrer",
+		};
+	} else {
+		text = {
+			desc:"Don’t be afraid to try it’s free",
+			titre:"ARE YOU READY FOR SERVY ?",
+			input:"Register by your Email ✉️ or Phone 📞",
+			bouton1:"Get Registration Link",
+			bouton2:"Get Link",
 
+		};
+	}
 	function useWindowSize() {
 		const [size, setSize] = useState([0, 0]);
 		useLayoutEffect(() => {
@@ -142,18 +164,18 @@ export default function LandingPage() {
 				<div className={classes.entete}>
 					<div className={classes.trait}></div>
 					<Typography className={classes.ins} align={"center"}>
-						Don’t be afraid to try it’s free
+					{text.desc}
 					</Typography>
 					<div className={classes.trait}></div>
 				</div>
 				<Typography className={classes.Titre} component="div" align={"center"}>
-					ARE YOU READY FOR SERVY ?
+				{text.titre}
 				</Typography>
 				<div className={classes.probButton}>
 					<Box component="form" noValidate autoComplete="off">
 						<OutlinedInput
 							className={classes.input}
-							placeholder="Register by your Email ✉️ or Phone 📞"
+							placeholder={text.input}
 						/>
 					</Box>
 
@@ -164,7 +186,7 @@ export default function LandingPage() {
 							onClick={(e) => {
 								alert("Cette fonctionnalité n'est pas encore lancé restez branché pour son lancement !! ");
 							}}>
-							Get Registration Link
+							{text.bouton1}
 						</Buttone>
 					)}
           	{getWindowDimensions() <= 600 && (
@@ -174,7 +196,7 @@ export default function LandingPage() {
 							onClick={(e) => {
 								alert("Cette fonctionnalité n'est pas encore lancé restez branché pour son lancement !! ");
 							}}>
-							Get Link
+							{text.bouton2}
 						</Buttone2>
 					)}
 				</div>

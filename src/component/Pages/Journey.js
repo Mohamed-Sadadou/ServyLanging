@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useLayoutEffect } from "react";
+import { useState, useLayoutEffect, useContext, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
@@ -14,7 +14,7 @@ import f3 from "../../Images/f3.png";
 import f4 from "../../Images/f4.png";
 import f5 from "../../Images/f5.png";
 import f6 from "../../Images/f6.png";
-
+import LangueContext from "../LangueContext";
 function getWindowDimensions() {
 	const { innerWidth: width } = window;
 	return width;
@@ -56,8 +56,9 @@ const Buttone2 = styled(Button)({
 });
 const useStyles = makeStyles((theme) => ({
 	Corp1: {
-		width: "100vw",
-		height: "100vh",
+		width: "100%",
+		height: "fit-content",
+		minHeight: "100vh",
 		backgroundColor: "white",
 		backgroundImage: `url(${Logo})`,
 		backgroundSize: "contain",
@@ -87,13 +88,11 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down("240")]: { height: "130px" },
 	},
 	BlocImg: {
-		height: "140px",
+		height: "fit-content",
 		width: "85vw",
 		marginLeft: "auto",
 		marginRight: "auto",
 		marginTop: "6px",
-		[theme.breakpoints.down("1100")]: { height: "25vh" },
-		[theme.breakpoints.down("692")]: { height: "200px" },
 	},
 	Titre: {
 		fontFamily: " 'Manrope', sans-serif",
@@ -108,7 +107,6 @@ const useStyles = makeStyles((theme) => ({
 		fontFamily: " 'Manrope', sans-serif",
 		color: "#2A313C",
 		fontSize: "42px",
-		minWidth: "60px",
 		fontWeight: "bold",
 		[theme.breakpoints.down("1000")]: { fontSize: "35px" },
 		[theme.breakpoints.down("800")]: { fontSize: "31px" },
@@ -166,7 +164,7 @@ const useStyles = makeStyles((theme) => ({
 		marginTop: "50px",
 		height: "50px",
 		width: "90%",
-        maxWidth:'1400px',
+		maxWidth: "1400px",
 		backgroundColor: "#E6F0FF",
 		borderRadius: "5px",
 		display: "grid",
@@ -177,7 +175,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	input: {
 		width: "64vw",
-		maxWidth:'1150px',
+		maxWidth: "1150px",
 		height: "45px",
 		marginTop: "5px",
 		borderRadius: "5px 0px 00px 5px",
@@ -196,9 +194,11 @@ const useStyles = makeStyles((theme) => ({
 	},
 	space: {
 		width: "50vw",
+		height:'fit-content',
 		[theme.breakpoints.down("692")]: { width: "65vw" },
 	},
 	Imgs: {
+		marginTop:'20px',
 		display: "grid",
 		gridTemplateColumns: "repeat(6, 1fr)",
 		[theme.breakpoints.down("692")]: { gridTemplateColumns: "repeat(3, 1fr)" },
@@ -215,13 +215,64 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	corp: {
-		height: "600px",
+		height: "fit-content",
 	},
 }));
 
 export default function LandingPage(props) {
 	const classes = useStyles();
-
+	const [Langue, setLangue] = useState("");
+	const [Check, setCheck] = useState(false);
+	const { langue, setlangue } = useContext(LangueContext);
+	console.log("-----------------------");
+	console.log("-----------------------");
+	console.log(langue);
+	console.log("-----------------------");
+	console.log("-----------------------");
+	console.log("voila : ", langue, "  --  ", Langue);
+	if (langue !== Langue) setLangue(langue);
+	var text;
+	if (Langue === "fr") {
+		text = {
+			titre1: "Commencez votre presence en ligne",
+			titre2: {
+				titre2: "Partout",
+				titre3: "&",
+				titre4: "Gratuitement.",
+			},
+			input: {
+				input1: "Introduisez votre Email ✉️ ou Phone 📞",
+				input2: "Email ✉️ ou Phone 📞",
+			},
+			bouton: {
+				bouton1: "Enregistrer",
+				bouton2: "Lien d'enregistrement",
+			},
+			b2b: "B2B ou B2C ou meme B2B2C",
+			act:"Vous avez été correctement enregistré !",
+			text:"Vous recevrez un message pour confirmer votre inscription alors vous obtiendrez votre lien referal pour booster votre boutique.A la seconde où vos clients entrent sur le site et s’inscrivent, nous ajouterons des points à votre boutique pour améliorer votre classement. Chaque abonnement de votre personnel votre boutique sera mise en avant sur notre plateforme.",
+		};
+	} else {
+		text = {
+			titre1: "Start Your Online Journey, Presence From",
+			titre2: {
+				titre2: "Everywhere",
+				titre3: "& For ",
+				titre4: "Free.",
+			},
+			input: {
+				input1: "Register by your Email ✉️ or Phone 📞",
+				input2: "Email ✉️ or Phone 📞",
+			},
+			bouton: {
+				bouton1: "Register",
+				bouton2: "Get Registration Link",
+			},
+			b2b: "B2B or B2C or even B2B2C",
+			act:"You’ve registered Succesfully !",
+			text:"You will receive a message to confirm your registration then you will get your link referal to boost your shop. The second your customers enter the site and register, we will add points to your store to improve your ranking. Each subscription of your staff your shop will be highlighted on our platform.",
+		};
+	}
 	function useWindowSize() {
 		const [size, setSize] = useState([0, 0]);
 		useLayoutEffect(() => {
@@ -243,17 +294,24 @@ export default function LandingPage(props) {
 				<div style={{ height: "10px" }}></div>
 				<div className={classes.BlocTitre}>
 					<Box className={classes.Titre} component="div" align={"center"}>
-						Start Your Online Journey, Presence From
+						{text.titre1}
 					</Box>
-
 					<div className={classes.Boite1}>
-						<Box className={classes.Titre1b}>Everywhere </Box>
-						<div className={classes.Boite}> </div>
-						<Box className={classes.Titre1a}>& For </Box>
-						<div className={classes.Boite}> </div>
-						<Box className={classes.Titre1c}>Free. </Box>
+						<div style={{ width: "fit-content", marginRight: "15px" }}>
+							<Box className={classes.Titre1a} style={{ color: "#435EF7" }}>
+								{text.titre2.titre2}
+							</Box>
+						</div>
+						<div style={{ width: "fit-content", marginRight: "15px", }}>
+							<Box className={classes.Titre1a}>{text.titre2.titre3}</Box>
+						</div>
+						<div style={{ width: "fit-content", marginRight: "15px" }}>
+							<Box className={classes.Titre1a} style={{ color: "#48EA54" }}>
+								{text.titre2.titre4}
+							</Box>
+						</div>
 					</div>
-					<Box className={classes.Titre1d}>B2B or B2C or even B2B2C </Box>
+					<Box className={classes.Titre1d}>{text.b2b} </Box>
 				</div>
 				<div className={classes.BlocTouche}>
 					<div className={classes.probButton}>
@@ -261,7 +319,7 @@ export default function LandingPage(props) {
 							<Box component="form" noValidate autoComplete="off">
 								<OutlinedInput
 									className={classes.input}
-									placeholder="Register by your Email ✉️ or Phone 📞"
+									placeholder={text.input.input1}
 								/>
 							</Box>
 						)}
@@ -269,7 +327,7 @@ export default function LandingPage(props) {
 							<Box component="form" noValidate autoComplete="off">
 								<OutlinedInput
 									className={classes.input}
-									placeholder="Email ✉️ or Phone 📞"
+									placeholder={text.input.input2}
 								/>
 							</Box>
 						)}
@@ -278,11 +336,12 @@ export default function LandingPage(props) {
 								variant="contained"
 								disableRipple
 								onClick={(e) => {
+									setCheck(true);
 									alert(
 										"Cette fonctionnalité n'est pas encore lancé restez branché pour son lancement !! "
 									);
 								}}>
-								Register
+								{text.bouton.bouton1}
 							</Buttone2>
 						)}
 						{getWindowDimensions() > 600 && (
@@ -290,24 +349,23 @@ export default function LandingPage(props) {
 								variant="contained"
 								disableRipple
 								onClick={(e) => {
+									setCheck(true);
 									alert(
 										"Cette fonctionnalité n'est pas encore lancé restez branché pour son lancement !! "
 									);
 								}}>
-								Get Registration Link
+								{text.bouton.bouton2}
 							</Buttone>
 						)}
 					</div>
-					<Box className={classes.act}>You’ve registered Succesfully !</Box>
+					{Check && (
+						<Box className={classes.act}>{text.act}</Box>
+					)}
 				</div>
 				<div className={classes.BlocEcris}>
 					<div className={classes.space}>
 						<Box className={classes.ecris}>
-							You will receive and message to confirm then you get your referal
-							link to boost your shop. The second they enter the website and
-							register we will add points to your shop to higher your Ranking.
-							Every subscribe from your people your shop will be trendy in our
-							platform.
+						{text.text}
 						</Box>
 					</div>
 				</div>

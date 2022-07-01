@@ -1,21 +1,45 @@
 import React from "react";
 import Service from "../../Composant/ServiceDetail";
+import { useState, useLayoutEffect, useContext, useEffect } from "react";
+import LangueContext from "../../LangueContext";
 
 
 export default function LandingPage() {
 	//************************************************* */
+	const [Langue,setLangue]=useState("");
+	const { langue, setlangue } = useContext(LangueContext);
+	console.log("-----------------------");
+	console.log("-----------------------");
+	console.log(langue);
+	console.log("-----------------------");
+	console.log("-----------------------");
+	console.log("voila : ",langue,"  --  ",Langue)
+	if(langue!==Langue)	setLangue(langue);
+	var text;
+	if (Langue === "fr") {
+		text = {		
+			Titre:"Service Tech",
+			TextPart1:"Mettre en valeur ses produits ! Voilà une problématique que beaucoup de boutiques doivent résoudre à chaque nouveau produit à mettre en vente dans leur boutique en ligne.",
+			TextPart2:"En effet, que feriez-vous si vous aviez besoin que votre boutique en ligne soit différente des autres ? et si vous voulez des formes, des couleurs ou des modifications sur mesure . Dans la majorité des cas vous devrez choisir entre des templates déjà faits ! Chez Servy c’est différent ! si vous voulez de la sure mesure vous aurez votre propre plateforme pour vous a votre gout ! vous aurez votre plateforme reliée à la plateforme servie et vous aurez tous les services toujours disponibles ! vous pouvez demander un landing page, une application pour vous ou votre propre plateforme powered by MASS.",
+			TextPart3:"Le service tech met à votre disposition les développer de servy et MASS pour vous permettre de mettre en place les solutions informatiques dont vous rêvez ! "
+		};
+	} else {
+		text = {
+			Titre:"Tech Service",
+			TextPart1:"Showcase your products! This is a problem that many shops have to solve with each new product to put on sale in their online store.",
+			TextPart2:"Indeed, what would you do if you needed your online store to be different from the others? and if you want custom shapes, colors or changes . In most cases you will have to choose between already made templates! At Servy it’s different! If you want the sure measure you will have your own platform for you to your taste! you will have your platform linked to the platform served and you will have all the services always available! you can request a landing page, an app for you or your own platform powered by MASS.",
+			TextPart3:"The tech department puts at your disposal the development of servy and MASS to allow you to implement the IT solutions you dream of! "
+		};
+	}
 	return (
 		<div>
 			<div>
 				<Service
 					id="8"
-					Titre="Media Service"
-					TextPart1="Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 'de Finibus Bonorum et Malorum' (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, 'Lorem ipsum dolor sit amet..', comes from a line in section 1.10.32."
-					TextPart2="The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from 'de Finibus Bonorum et Malorum' by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham."
-					TextPart3="
-                    Where can I get some?
-                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc."
-				/>
+					Titre={text.Titre}
+					TextPart1={text.TextPart1}
+					TextPart2={text.TextPart2}
+					TextPart3={text.TextPart3}/>
 			</div>
 		</div>
 	);

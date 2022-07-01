@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState, useLayoutEffect } from "react";
+import { useState, useLayoutEffect, useContext, useEffect } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import { makeStyles } from "@material-ui/core/styles";
@@ -12,12 +12,16 @@ import Logon from "../../Images/Logo (1).png";
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import { Link } from "react-scroll";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import LangueContext from "../LangueContext";
 
 function getWindowDimensions() {
 	const { innerWidth: width } = window;
 	return width;
 }
-
 const useStyles = makeStyles((theme) => ({
 	Toolbar: {
 		width: "100%",
@@ -38,10 +42,10 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down("1100")]: {
 			width: 160,
 			height: 57,
-			marginTop: "-5px",
+			marginTop: "5px",
 			marginRight: 10,
 		},
-		[theme.breakpoints.down("900")]: {
+		[theme.breakpoints.down("1000")]: {
 			width: 70,
 			height: 70,
 			marginRight: 10,
@@ -68,10 +72,12 @@ const useStyles = makeStyles((theme) => ({
 		fontSize: 14,
 	},
 	ActionBloc: {
-		width: "100%",
+		height: "30px",
+		width: "20%",
 		minWidth: "130px",
 		fontSize: "14px",
-		marginLeft: "25px",
+		marginLeft: "auto",
+		marginRight: "0px",
 		[theme.breakpoints.down("1100")]: {
 			width: "35vw",
 			fontSize: "13px",
@@ -100,24 +106,27 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down("590")]: { marginRight: "10px" },
 
 		marginRight: "45px",
-		display: "grid",
-		gridTemplateColumns: "repeat(3, 1fr)",
+		display: "flex",
+		flexDirection: "row",
+		alignItems: "center",
+		justifyContent: "space-between",
 	},
 	vide: {
-		width: "18vw",
-		marginRight: "20px",
+		width: "18%",
+		marginRight: "30px",
 		height: "40px",
-		[theme.breakpoints.down("1000")]: { width: "12vw" },
-		[theme.breakpoints.down("600")]: { width: "12vw" },
+		[theme.breakpoints.down("1000")]: { width: "12%" },
+		[theme.breakpoints.down("600")]: { width: "12%" },
 	},
 	vide2: {
 		backgroundColor: "green",
 		width: "80px",
 		height: "10px",
+
 		[theme.breakpoints.down("630")]: { width: "60px" },
 	},
 	ButtonBloc: {
-		width: "25%",
+		width: "15%",
 		right: 0,
 		height: "40px",
 		display: "flex",
@@ -129,15 +138,15 @@ const useStyles = makeStyles((theme) => ({
 	},
 	vidos: {
 		width: "15%",
-		backgroundColor: "red",
 	},
 }));
-
 const ButtonSpe = styled(Button)({
 	boxShadow: "none",
 	textTransform: "none",
-	width: "95%",
+	width: "100%",
 	height: "100%",
+	marginRight: 10,
+	marginLeft: "auto",
 	fontSize: 14,
 	padding: "6px 12px",
 	lineHeight: 1.5,
@@ -152,12 +161,21 @@ const ButtonSpe = styled(Button)({
 		boxShadow: "none",
 	},
 });
-
 export default function MenuAppBar(props) {
 	const classes = useStyles();
-
 	var color;
-
+	const [use, setuse] = useState(true);
+	const [Langue, setLangue] = useState("");
+	const {  langue, setlangue  } = useContext(LangueContext);
+	const handleChange = (event) => {
+	if(event.target.value==="fr"){
+		setLangue("fr");
+	}else{
+		setLangue("ang");
+	}
+		
+		setlangue(event.target.value);
+	};
 	if (props.id === "1") color = { color: "black" };
 	else color = { color: "white" };
 	function useWindowSize() {
@@ -172,13 +190,14 @@ export default function MenuAppBar(props) {
 		return size;
 	}
 	useWindowSize();
+	
 	return (
-		<Box sx={{ flexGrow: 1, width: "98.9vw" }}>
+		<Box sx={{ flexGrow: 0, width: "100%" }}>
 			<AppBar
 				position="static"
 				style={{ background: "transparent", boxShadow: "none" }}>
 				<Toolbar className={classes.Toolbar}>
-					{getWindowDimensions() <= 900 && props.id === "0" && (
+					{getWindowDimensions() <= 1000 && props.id === "0" && (
 						<div
 							className={classes.LogoBloc}
 							onClick={(e) => {
@@ -187,7 +206,7 @@ export default function MenuAppBar(props) {
 							<img src={Logo1} className={classes.Logo} alt="fireSpot" />
 						</div>
 					)}
-					{getWindowDimensions() > 900 && props.id === "0" && (
+					{getWindowDimensions() > 1000 && props.id === "0" && (
 						<div
 							className={classes.LogoBloc}
 							onClick={(e) => {
@@ -196,7 +215,7 @@ export default function MenuAppBar(props) {
 							<img src={Logo} className={classes.Logo} alt="fireSpot" />
 						</div>
 					)}
-					{getWindowDimensions() <= 900 && props.id === "1" && (
+					{getWindowDimensions() <= 1000 && props.id === "1" && (
 						<div
 							className={classes.LogoBloc}
 							onClick={(e) => {
@@ -205,7 +224,7 @@ export default function MenuAppBar(props) {
 							<img src={Logo1n} className={classes.Logo} alt="fireSpot" />
 						</div>
 					)}
-					{getWindowDimensions() > 900 && props.id === "1" && (
+					{getWindowDimensions() > 1000 && props.id === "1" && (
 						<div
 							className={classes.LogoBloc}
 							onClick={(e) => {
@@ -217,25 +236,6 @@ export default function MenuAppBar(props) {
 
 					{getWindowDimensions() > 1000 && <div className={classes.vide}></div>}
 					<div className={classes.ActionBloc}>
-						<Link
-							activeClass="active"
-							to="About"
-							spy={true}
-							smooth={true}
-							offset={-70}
-							duration={1000}>
-							<div className={classes.ActionText}>
-								<Typography
-									style={{
-										fontFamily: " 'Manrope', sans-serif",
-										fontWeight: "bold",
-										color: color.color,
-										fontSize: "100%",
-									}}
-									component="div"
-									align={"center"}></Typography>
-							</div>
-						</Link>
 						{getWindowDimensions() >= 702 && (
 							<Link
 								activeClass="active"
@@ -251,6 +251,7 @@ export default function MenuAppBar(props) {
 											fontWeight: "bold",
 											color: color.color,
 											fontSize: "100%",
+											marginTop: "10px",
 										}}
 										component="div"
 										align={"center"}
@@ -279,6 +280,7 @@ export default function MenuAppBar(props) {
 											fontWeight: "bold",
 											color: color.color,
 											fontSize: "100%",
+											marginTop: "10px",
 										}}
 										component="div"
 										align={"center"}>
@@ -301,6 +303,7 @@ export default function MenuAppBar(props) {
 										fontWeight: "bold",
 										color: color.color,
 										fontSize: "100%",
+										marginTop: "10px",
 									}}
 									component="div"
 									onClick={(e) => {
@@ -314,8 +317,20 @@ export default function MenuAppBar(props) {
 							</div>
 						</Link>
 					</div>
-
-					<div className={classes.vidos}></div>
+					<div style={{ width: 100,marginRight:10,marginLeft:20,marginTop:8}}>
+						<div sx={{ width: 100 ,marginRight:0,marginLeft:'auto'}}>
+							<FormControl fullWidth>
+								<Select
+								sx={{width:'100px',height:'35px',fontSize:12,color: color.color,}}
+									value={Langue}
+									label="Langue"
+									onChange={handleChange}>
+									<MenuItem value={"fr"}>Francais</MenuItem>
+									<MenuItem value={"ang"}>Anglais</MenuItem>
+								</Select>
+							</FormControl>
+						</div>
+					</div>
 					{getWindowDimensions() > 1100 && (
 						<div className={classes.ButtonBloc}>
 							<ButtonSpe
@@ -324,7 +339,7 @@ export default function MenuAppBar(props) {
 								onClick={(e) => {
 									window.location.href = "/Journey ";
 								}}>
-								Start you journey
+								Start your journey
 							</ButtonSpe>
 						</div>
 					)}
