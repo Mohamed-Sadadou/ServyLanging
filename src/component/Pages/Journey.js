@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useLayoutEffect, useContext, useEffect } from "react";
+import { useState, useLayoutEffect, useContext} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
@@ -223,7 +223,7 @@ export default function LandingPage(props) {
 	const classes = useStyles();
 	const [Langue, setLangue] = useState("");
 	const [Check, setCheck] = useState(false);
-	const { langue, setlangue } = useContext(LangueContext);
+	const { langue } = useContext(LangueContext);
 	console.log("-----------------------");
 	console.log("-----------------------");
 	console.log(langue);

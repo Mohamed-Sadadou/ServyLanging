@@ -15,7 +15,7 @@ import Marketing from "./component/Pages/Services/Marketing";
 import Media from "./component/Pages/Services/Media";
 import Packaging from "./component/Pages/Services/Packaging";
 import Photo from "./component/Pages/Services/Photography";
-import { React, useContext, useEffect, useState } from "react";
+import { React,useState } from "react";
 
 function App() {
 	const [langue, setlangue] = useState();

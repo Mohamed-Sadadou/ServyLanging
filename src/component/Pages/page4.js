@@ -1,6 +1,6 @@
 import React from "react";
 import Fond from "../../Images/Image4.png";
-import { useState, useLayoutEffect, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import LangueContext from "../LangueContext";
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@mui/material/Box";
@@ -92,7 +92,7 @@ const useStyles = makeStyles((theme) => ({
 export default function LandingPage() {
 	const classes = useStyles();
 	const [Langue,setLangue]=useState("");
-	const { langue, setlangue } = useContext(LangueContext);
+	const { langue } = useContext(LangueContext);
 	
 	if(langue!==Langue)	setLangue(langue);
 	var text;

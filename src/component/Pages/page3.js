@@ -1,6 +1,6 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
-import { useState, useLayoutEffect, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Service from "../Composant/Service";
 import LangueContext from "../LangueContext";
@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
 export default function LandingPage() {
 	const classes = useStyles();
 	const [Langue,setLangue]=useState("");
-	const { langue, setlangue } = useContext(LangueContext);
+	const { langue } = useContext(LangueContext);
 	
 	if(langue!==Langue)	setLangue(langue);
 	var text;

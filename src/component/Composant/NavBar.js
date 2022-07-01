@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState, useLayoutEffect, useContext, useEffect } from "react";
+import { useState, useLayoutEffect, useContext} from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import { makeStyles } from "@material-ui/core/styles";
@@ -12,7 +12,6 @@ import Logon from "../../Images/Logo (1).png";
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import { Link } from "react-scroll";
-import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
@@ -77,7 +76,6 @@ const useStyles = makeStyles((theme) => ({
 		minWidth: "130px",
 		fontSize: "14px",
 		marginLeft: "auto",
-		marginRight: "0px",
 		[theme.breakpoints.down("1100")]: {
 			width: "35vw",
 			fontSize: "13px",
@@ -164,9 +162,9 @@ const ButtonSpe = styled(Button)({
 export default function MenuAppBar(props) {
 	const classes = useStyles();
 	var color;
-	const [use, setuse] = useState(true);
 	const [Langue, setLangue] = useState("");
-	const {  langue, setlangue  } = useContext(LangueContext);
+	const {  setlangue } = useContext(LangueContext);
+	
 	const handleChange = (event) => {
 	if(event.target.value==="fr"){
 		setLangue("fr");

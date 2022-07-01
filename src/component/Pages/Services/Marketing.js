@@ -1,13 +1,13 @@
 import React from "react";
 import Service from "../../Composant/ServiceDetail";
-import { useState, useLayoutEffect, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import LangueContext from "../../LangueContext";
 
 
 export default function LandingPage() {
 	//************************************************* */
 	const [Langue,setLangue]=useState("");
-	const { langue, setlangue } = useContext(LangueContext);
+	const { langue } = useContext(LangueContext);
 	console.log("-----------------------");
 	console.log("-----------------------");
 	console.log(langue);
