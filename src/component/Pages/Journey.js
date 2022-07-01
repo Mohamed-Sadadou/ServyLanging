@@ -102,6 +102,8 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down("1000")]: { fontSize: "35px" },
 		[theme.breakpoints.down("800")]: { fontSize: "31px" },
 		[theme.breakpoints.down("692")]: { fontSize: "22px" },
+		[theme.breakpoints.down("440")]: { fontSize: "18px" },
+		[theme.breakpoints.down("360")]: { fontSize: "14px" },
 	},
 	Titre1a: {
 		fontFamily: " 'Manrope', sans-serif",
@@ -111,6 +113,8 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down("1000")]: { fontSize: "35px" },
 		[theme.breakpoints.down("800")]: { fontSize: "31px" },
 		[theme.breakpoints.down("692")]: { fontSize: "22px" },
+		[theme.breakpoints.down("440")]: { fontSize: "18px" },
+		[theme.breakpoints.down("360")]: { fontSize: "14px" },
 	},
 	Titre1b: {
 		fontFamily: " 'Manrope', sans-serif",
